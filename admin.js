@@ -263,7 +263,7 @@ function addItem() {
       Type: document.querySelector("#Type").value,
       Nationality: document.querySelector("#Nationality").value,
       image: document.querySelector("#image ").value,
-      Id: cars.length,
+      Id: cars.length +1,
     };
     cars.push(newCars);
     localStorage.setItem("cars", JSON.stringify(cars));
