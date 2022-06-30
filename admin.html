@@ -4,9 +4,170 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CapeCoast Admin</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-    
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary d-flex justify-content-end" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="event.preventDefault();">
+        
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Brand</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Brand"
+                  placeholder=""
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Country</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Country"
+                  placeholder=""
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Price</label>
+               <select id="Price">
+              <option>€20,000-34,000</option>
+              <option>€35,000-51,000</option>
+              <option>€52,000-74,000</option>
+              <option>€75,000-99,000</option>
+              <option>€100,000-119,000</option>
+              <option>€120,000-299,000</option>
+              <option>€300,000-500,000</option>
+               </select>
+              </div>
+               <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Bathrooms</label>
+               <select id="Bathrooms">
+                <option selected>Traction</option>
+              <option>AWD</option>
+              <option>RWD</option>
+              <option>FWD</option>
+               </select>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Size</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Size"
+                  placeholder=""
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Type</label>
+                <select id="Type">
+                    <option>Apartment</option>
+                    <option>Home</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Img</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Img"
+                  placeholder=""
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Price in Rands</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="Price"
+                  placeholder=""
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Listing</label>
+               <select  id="Listed">
+                <option>For Rent</option>
+                <option>For Sale</option>
+               </select>
+              </div>
+                <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Day</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Day"
+                  placeholder=""
+                />
+              </div>
+                <button type="submit" id="addItems" class="btn btn-primary" >
+                Save changes
+              </button>
+            </form>
+        
+        
+        
+        
+        
+        
+        
+        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Country</th>
+            <th scope="col">Class</th>
+            <th scope="col">Traction</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+
+
+
+      <script src="https://kit.fontawesome.com/3e6fe2b64f.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 </body>
 </html>
