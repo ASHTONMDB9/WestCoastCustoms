@@ -18,7 +18,7 @@
 .navbar{
     position: fixed;
     width: 100%;
-    z-index: 2000;
+    z-index: 1000;
 }
 .navbar-brand {
     font-family: curly;
@@ -46,9 +46,8 @@
     font-family: dead;
     margin-left: 10px
 }
-
-option:hover {
-    color: red;
+option{
+    background-color: red;
 }
 /*Showroom*/
 #Showroom {
