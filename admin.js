@@ -1,6 +1,7 @@
 const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.getItem("item")) :
 [
   {
+    Id: "1",
     Brand: "Nissan",
     Model: "Skyline R34",
     Type: "Tuner/Sport",
@@ -11,6 +12,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€95,000"
   },
   {
+    Id: "2",
     Brand: "Chevrolet",
     Model: "Camaro SS",
     Type: "Muscle",
@@ -21,6 +23,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€175,000"
   },
   {
+    Id: "3",
     Brand: "Toyota",
     Model: "Supra Mk4",
     Type: " Tuner/Sport",
@@ -31,6 +34,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€70,000"
   },
   {
+    Id: "4",
     Brand: "Land Rover",
     Model: "Evoque",
     Type: "SUV",
@@ -41,6 +45,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€85,000"
   },
   {
+    Id: "5",
     Brand: "Audi",
     Model: "R8",
     Type: " Convertible",
@@ -51,6 +56,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€180,000"
   },
   {
+    Id: "6",
     Brand: "Bentley",
     Model: "Continetal GT",
     Type: "Cabriolet",
@@ -61,6 +67,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€290,000"
   },
   {
+    Id: "7",
     Brand: "BMW",
     Model: "M3 GTR E46",
     Type: "Tuner/Sport",
@@ -71,6 +78,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€185,000"
   },
   {
+    Id: "8",
     Brand: "Tesla",
     Model: "3",
     Type: "Sedan",
@@ -81,6 +89,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€500,000"
   },
   {
+    Id: "9",
     Brand: "Chevrolet",
     Model: "Corvette-C7",
     Type: "Sport",
@@ -91,6 +100,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€175,000"
   },
   {
+    Id: "10",
     Brand: "Ferrari",
     Model: "458 Italia",
     Type: "Exotic",
@@ -101,6 +111,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€300,000"
   },
   {
+    Id: "11",
     Brand: "Ford Shelby",
     Model: "Mustang-GT",
     Type: "Muscle",
@@ -111,6 +122,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€200,000"
   },
   {
+    Id: "12",
     Brand: "Honda",
     Model: "S2000",
     Type: "Spyder",
@@ -121,6 +133,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€55,000"
   },
   {
+    Id: "13",
     Brand: "Lamborghini",
     Model: "Huracán",
     Type: "Hypercar",
@@ -131,6 +144,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€365,000"
   },
   {
+    Id: "14",
     Brand: "Porsche",
     Model: "GT2 RS",
     Type: " Exotic",
@@ -141,6 +155,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€195,000"
   },
   {
+    Id: "15",
     Brand: "Mazda",
     Model: "RX7",
     Type: "Tuner/Sport",
@@ -151,6 +166,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€35,000"
   },
   {
+    Id: "16",
     Brand: "MClaren",
     Model: "P1",
     Type: "Hypercar",
@@ -161,6 +177,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€250,000"
   },
   {
+    Id: "17",
     Brand: "Mercedes-Benz",
     Model: "AMG G-Wagon",
     Type: "SUV",
@@ -171,6 +188,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€375,000"
   },
   {
+    Id: "18",
     Brand: "Mercedes-Benz",
     Model: "SLS AMG",
     Type: "Exotic",
@@ -181,6 +199,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€220,000"
   },
   {
+    Id: "19",
     Brand: "Mini Cooper",
     Model: "One S",
     Type: "Convertible",
@@ -191,6 +210,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
     Price: "€27,000"
   },
   {
+    Id: "20",
     Brand: "Mitshubishi",
     Model: "Lancer Evoultion VIII",
     Type: "Tuner/Sport",
@@ -202,27 +222,52 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
   },
 ];
 
-function showItems(item) {
-  document.querySelector("#cars").innerHTML = "";
-  cars.forEach((car, i) => {
-    document.querySelector("#cars").innerHTML += `
-   
-  
-   
-  
+
+const carsContainer = document.querySelector("#carTable");
 
 
 
-   <tr>
-   <td scope="col">${car.Brand}</td>
-   <td scope="col"> ${car.Type}</td>
-   <td scope="col">${car.Nationality}</td>
-   <td scope="col"> ${car.Traction}</td>
-
- </tr>
- `;
+function showItems(cars) {
+  document.querySelector("#carTable").innerHTML = "";
+  cars.forEach((car) => {
+    console.log(car)
+    document.querySelector("#carTable").innerHTML += `
+    <tr>
+        <td scope="col">${car.Id}</td>
+        <td scope="col">${car.Brand}</td>
+        <td scope="col"> ${car.Type}</td>
+        <td scope="col">${car.Nationality}</td>
+        <td scope="col"> ${car.Traction}</td>
+    <tr>
+    `  
   });
-  console.log(cars)
+
 }
+
+
+
+
 localStorage.setItem("cars",JSON.stringify(cars));
 showItems(cars);
+
+
+
+//Add function//
+function addItem() {
+    const newCars = {
+      Brand: document.querySelector("#Brand").value,
+      Description: document.querySelector("#Description").value,
+      Price: document.querySelector("#Price").value,
+      Traction: document.querySelector("#Traction").value,
+      Model: document.querySelector("#Model").value,
+      Type: document.querySelector("#Type").value,
+      Nationality: document.querySelector("#Nationality").value,
+      image: document.querySelector("#image ").value,
+      Id: cars.length,
+    };
+    cars.push(newCars);
+    localStorage.setItem("cars", JSON.stringify(cars));
+    showItems(cars);
+  }
+
+  document.querySelector("#addCar").addEventListener("click", addItem());
