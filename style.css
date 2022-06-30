@@ -1,0 +1,56 @@
+/*Fonts*/
+@font-face {
+    font-family: curly;
+    src: url(./Fonts/cadillac-font/CadillacPersonalUseItalic-K7pny.ttf);
+}
+@font-face {
+    font-family: dead;
+    src: url(./Fonts/princess-and-the-frog-font/PrincessAndTheFrog-XdMd.ttf);
+}
+/*CSS RESET*/
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+/*Navbar*/
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 2000;
+}
+.navbar-brand {
+    font-family: curly;
+    text-decoration: underline red;
+}
+#brand-text {
+    font-family: dead;
+    text-decoration: underline red;
+}
+.nav-link:hover {
+    text-decoration: underline red 3px;
+}
+/*Landing Page*/
+#landing {
+    background-image: url(./Images/Landing.jpg);
+    background-size: cover;
+    height: 100vh;
+    padding-top: 100px;
+}
+#Brand {
+    font-family: curly;
+    margin-left: 5px;
+}
+#Brand2 {
+    font-family: dead;
+    margin-left: 10px
+}
+
+option:hover {
+    color: red;
+}
+/*Showroom*/
+#Showroom {
+    text-decoration: underline red;
+}
