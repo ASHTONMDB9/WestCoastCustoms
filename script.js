@@ -224,7 +224,7 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
 
 function showItems(item) {
   document.querySelector("#cars").innerHTML = "";
-  cars.forEach((car, i) => {
+  item.forEach((car, i) => {
     document.querySelector("#cars").innerHTML += `
     
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -247,7 +247,7 @@ function showItems(item) {
 
 
   <div class="card mt-2 mb-2 ms-2 me-2 shadow-lg p-3 rounded" style="width: 21rem;">
-    <img src="${car.image}" class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 23rem; width: 19rem;">
+    <img src="${car.image}" class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 23rem; width: 19rem; object-fit: cover;">
     <div class="card-body">
     <h2 class="card-title">${car.Brand}</h2>
     <p>${car.Description}</p>
@@ -302,7 +302,7 @@ filter = () => {
           console.log(specificView);
       });
   } else {
-      display();
+    showItems(cars);
   }
 };
 
@@ -335,7 +335,7 @@ filter1 = () => {
           console.log(specificView);
       });
   } else {
-      display();
+    showItems(cars);
   }
 };
 
@@ -368,7 +368,7 @@ filter2 = () => {
           console.log(specificView);
       });
   } else {
-      display();
+    showItems(cars);
   }
 };
 
@@ -401,6 +401,21 @@ filter3 = () => {
           console.log(specificView);
       });
   } else {
-      display();
+    showItems(cars);
   }
 };
+
+window.addEventListener('scroll',changeBackground);
+
+function changeBackground(){
+  let navbar = document.getElementById("nav");
+  let scrollValue = window.scrollY;
+  if(scrollValue <50){
+    navbar.style.background = "transparent";
+    navbar.style.transition = "all 0.5s linear"
+
+    
+}else{
+    navbar.style.background = "white";
+}
+}

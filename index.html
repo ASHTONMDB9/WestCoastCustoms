@@ -11,7 +11,7 @@
   </head>
   
   <body>
-    <nav class="navbar navbar-expand-lg bg-backround shadow-lg p-3 mb-5">
+    <nav id="nav" class="navbar navbar-expand-lg bg-backround shadow-lg p-3 mb-5">
       <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="./index.html">CapeCoast <span id="brand-text">Customs</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,10 +27,10 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Extra
+                Admin Options
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="./admin.html">Admin Page</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -54,7 +54,7 @@
     <p class="d-flex justify-content-center" id="slogan">We bring you the best in cars new and old, for the brave and the bold. Best believe we get it sold</p>
     
     <div class="filter">
-      <div class="container">
+      <div class="container-fluid">
         <div class="card bg-transparent border-0 me-5 ms-5">
           <div class="card-body d-flex justify-content-center">
             
@@ -70,14 +70,14 @@
             </select>
             
             <select class="form-select ms-3 me-3" id="track" onchange="filter2()" style="width: 110px;" aria-label="Default select example">
-              <option selected>Traction</option>
+              <option selected value="all">Traction</option>
               <option value="AWD">AWD</option>
               <option value="RWD">RWD</option>
               <option value="FWD">FWD</option>
             </select>
 
             <select class="form-select ms-3 me-3" id="nation" onchange="filter3()" style="width: 150px;" aria-label="Default select example">
-              <option selected>Nationality</option>
+              <option selected value="all">Nationality</option>
               <option value="America">American</option>
               <option value="British">British</option>
               <option value="Germany">German</option>
@@ -86,7 +86,7 @@
             </select>
             
             <select class="form-select ms-3 me-3" id="class" onchange="filter1()" style="width: 100px;" aria-label="Default select example">
-              <option selected>Type</option>
+              <option selected value="all">Type</option>
               <option value="Convertible">Convertible</option>
               <option value="Cabriolet">Cabriolet</option>
               <option value="Spyder">Spyder</option>
@@ -100,7 +100,7 @@
             </select>
             
             <select class="form-select ms-3 me-3" id="filcars" onchange="filter()" style="width: 200px;" aria-label="Default select example">
-              <option selected>Brand</option>
+              <option selected value="all">Brand</option>
               <option value="Audi">Audi</option>
               <option value="Bentley">Bentley</option>
               <option value="BMW">BMW</option>
