@@ -222,6 +222,23 @@ const cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.
   },
 ];
 
+
+window.addEventListener('scroll',changeBackground);
+
+function changeBackground(){
+  let navbar = document.getElementById("nav");
+  let scrollValue = window.scrollY;
+  if(scrollValue <50){
+    navbar.style.background = "transparent";
+    navbar.style.transition = "all 0.5s linear"
+
+    
+}else{
+    navbar.style.background = "#151414";
+}
+}
+
+
 function showItems(item) {
   document.querySelector("#cars").innerHTML = "";
   item.forEach((car, i) => {
@@ -246,19 +263,19 @@ function showItems(item) {
 
 
 
-  <div class="card mt-2 mb-2 ms-2 me-2 shadow-lg p-3 rounded" style="width: 21rem;">
-    <img src="${car.image}" class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 23rem; width: 19rem; object-fit: cover;">
+  <div id="list" class="card mt-2 mb-2 ms-2 me-2 shadow-lg p-3 rounded" style="width: 21rem;">
+    <img id="carpic" src="${car.image}" class="card-img-top img-fluid" data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 23rem; width: 19rem; object-fit: cover;">
     <div class="card-body">
     <h2 class="card-title">${car.Brand}</h2>
     <p>${car.Description}</p>
-    <ul class="list-group list-group-flush">
+    <ul id="desc" class="list-group list-group-flush">
       <li class="list-group-item"><i class="fa-solid fa-car"></i> ${car.Model}</li>
       <li class="list-group-item"><i class="fa-solid fa-location-arrow"></i> ${car.Type}</li>
       <li class="list-group-item"><i class="fa-solid fa-map"></i> ${car.Nationality}</li>
       <li class="list-group-item"><i class="fa-solid fa-gear"></i> ${car.Traction}</li>
       </ul>
     <div class="card-footer d-flex mt-3">
-    <h3>${car.Price}</h3><br>
+    <h3 id="pr">${car.Price}</h3><br>
   </div>
     </div>
     </div>
@@ -381,7 +398,7 @@ filter3 = () => {
       specificView.forEach((car) => {
           document.querySelector("#cars").innerHTML += `
           <div class="card mt-2 mb-2 ms-2 me-2 shadow-lg p-3 rounded" style="width: 21rem;">
-          <img src="${car.image}" class="card-img-top" data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 18rem; width:19rem;">
+          <img id="carpic" src="${car.image}" class="card-img-top" data-bs-toggle="modal" data-bs-target="#exampleModal" style="height: 18rem; width:19rem;">
           <div class="card-body">
           <h2 class="card-title">${car.Brand}</h2>
           <p>${car.Description}</p>
@@ -404,18 +421,3 @@ filter3 = () => {
     showItems(cars);
   }
 };
-
-window.addEventListener('scroll',changeBackground);
-
-function changeBackground(){
-  let navbar = document.getElementById("nav");
-  let scrollValue = window.scrollY;
-  if(scrollValue <50){
-    navbar.style.background = "transparent";
-    navbar.style.transition = "all 0.5s linear"
-
-    
-}else{
-    navbar.style.background = "white";
-}
-}

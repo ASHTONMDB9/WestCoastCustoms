@@ -1,4 +1,4 @@
-let cars = JSON.parse(localStorage.getItem("item")) ? JSON.parse(localStorage.getItem("item")) :
+let cars = JSON.parse(localStorage.getItem("cars")) ? JSON.parse(localStorage.getItem("cars")) :
 [
   {
     Id: "1",
@@ -238,7 +238,7 @@ function showItems(cars) {
         <td scope="col"> ${car.Type}</td>
         <td scope="col">${car.Nationality}</td>
         <td scope="col"> ${car.Traction}</td>
-        <td scope="col"><button onclick>Delete </button></td>
+        <td scope="col"><button id="del" onclick="deleteTask(${car.Id})"><i class="fa-solid fa-trash-can-arrow-up"></i></button></td>
     <tr>
     `  
   });
@@ -267,8 +267,11 @@ function addItem() {
       Id: cars.length +1,
     };
     cars.push(newCars);
-    localStorage.setItem("item", JSON.stringify(cars));
-    cars = JSON.parse(localStorage.getItem("item"));
+    localStorage.setItem("cars", JSON.stringify(cars));
+    cars = JSON.parse(localStorage.getItem("cars"));
+    showItems(cars);
+    sessionStorage.setItem("cars", JSON.stringify(cars));
+    cars = JSON.parse(sessionStorage.getItem("cars"));
     showItems(cars);
   }
 
@@ -281,8 +284,11 @@ function addItem() {
       //Goes through the array and filters out every id that is equal to the selected one
       return cars.Id !== Id; //Returns all objects in the array that is not the same id as the selected one
     });
-     // Adds to local storage
-    localStorage.setItem("item", JSON.stringify(cars));
-    cars = JSON.parse(localStorage.getItem("item"));
-    showItems(); //Displays the array
+    // Adds to local storage
+    console.log('running')
+
+    localStorage.setItem("cars", JSON.stringify(cars));
+    cars = JSON.parse(localStorage.getItem("cars"));
+    showItems(cars); //Displays the array
   }
+  
